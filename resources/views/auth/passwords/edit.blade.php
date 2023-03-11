@@ -30,9 +30,39 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-danger" type="submit">
+                        <label for="title">{{ trans('cruds.user.fields.telegram') }}</label>
+                        <input class="form-control {{ $errors->has('telegram') ? 'is-invalid' : '' }}" type="text" name="telegram" id="telegram" value="{{ old('email', auth()->user()->telegram) }}" >
+                        @if($errors->has('telegram'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('telegram') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="title">{{ trans('cruds.user.fields.country') }}</label>
+                        <input class="form-control {{ $errors->has('country') ? 'is-invalid' : '' }}" type="text" name="country" id="country" value="{{ old('country', auth()->user()->country) }}" >
+                        @if($errors->has('country'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('country') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="title">{{ trans('cruds.user.fields.phone') }}</label>
+                        <input class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="text" name="phone" id="phone" value="{{ old('phone', auth()->user()->phone) }}" >
+                        @if($errors->has('phone'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('phone') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">
                             {{ trans('global.save') }}
                         </button>
+                        <a class="btn btn-danger" href="{{ route('admin.home') }}">
+                            {{ trans('global.cancel') }}
+                        </a>
                     </div>
                 </form>
             </div>

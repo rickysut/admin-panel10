@@ -45,13 +45,21 @@ class UsersController extends Controller
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : '';
             });
-            $table->editColumn('username', function ($row) {
-                return $row->username ? $row->username : '';
-            });
             $table->editColumn('email', function ($row) {
                 return $row->email ? $row->email : '';
             });
-
+            $table->editColumn('telegram', function ($row) {
+                return $row->telegram ? $row->telegram : '';
+            });
+            $table->editColumn('country', function ($row) {
+                return $row->country ? $row->country : '';
+            });
+            $table->editColumn('phone', function ($row) {
+                return $row->phone ? $row->phone : '';
+            });
+            $table->editColumn('status', function ($row) {
+                return $row->status ? $row->status : '';
+            });
             $table->editColumn('roles', function ($row) {
                 $labels = [];
                 

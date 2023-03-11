@@ -24,14 +24,24 @@
                     <th>
                         {{ trans('cruds.user.fields.name') }}
                     </th>
-                    <th>
-                        {{ trans('cruds.user.fields.username') }}
-                    </th>
+                    
                     <th>
                         {{ trans('cruds.user.fields.email') }}
                     </th>
                     <th>
                         {{ trans('cruds.user.fields.email_verified_at') }}
+                    </th>
+                    <th>
+                        {{ trans('cruds.user.fields.telegram') }}
+                    </th>
+                    <th>
+                        {{ trans('cruds.user.fields.country') }}
+                    </th>
+                    <th>
+                        {{ trans('cruds.user.fields.phone') }}
+                    </th>
+                    <th>
+                        {{ trans('cruds.user.fields.status') }}
                     </th>
                     <th>
                         {{ trans('cruds.user.fields.roles') }}
@@ -93,9 +103,12 @@
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'name', name: 'name' },
-{ data: 'username', name: 'username' },
 { data: 'email', name: 'email' },
 { data: 'email_verified_at', name: 'email_verified_at' },
+{ data: 'telegram', name: 'telegram' },
+{ data: 'country', name: 'country' },
+{ data: 'phone', name: 'phone' },
+{ data: 'status', name: 'status' },
 { data: 'roles', name: 'roles.title' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

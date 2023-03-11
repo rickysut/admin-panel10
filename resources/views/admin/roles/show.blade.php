@@ -20,6 +20,18 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.role.fields.default') }}
+                        </th>
+                        <td>
+                            @if ($role->default == 1)
+                                yes
+                            @else
+                                no
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.role.fields.permissions') }}
                         </th>
                         <td>

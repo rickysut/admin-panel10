@@ -61,7 +61,7 @@
                     id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <img class="rounded-circle header-profile-user mr-3"
-                        src="{{ asset('img/avatar-1.jpg') }}" alt="Header Avatar">
+                        src="{{ asset('images/avatar-1.jpg') }}" alt="Header Avatar">
                     <span class="ms-2 d-none d-sm-block user-item-desc">
                         <span class="user-name">{{ auth()->user()->name }}</span>
                         @foreach (auth()->user()->roles as $role) 

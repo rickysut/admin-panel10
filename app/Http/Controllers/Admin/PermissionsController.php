@@ -19,7 +19,7 @@ class PermissionsController extends Controller
         abort_if(Gate::denies('permission_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
-            $query = Permission::query()->select(sprintf('%s.*', (new Permission())->table));
+            $query = Permission::query()->orderBy('updated_at', 'desc')->select(sprintf('%s.*', (new Permission())->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');
@@ -73,10 +73,7 @@ class PermissionsController extends Controller
     {
         abort_if(Gate::denies('permission_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $grpTitle = trans('cruds');
-        // $breadcrumb = trans('global.create') ." ". trans('cruds.permission.title_singular');
         return view('admin.permissions.create', compact( 'grpTitle'));
-
-        return view('admin.permissions.create');
     }
 
     public function store(StorePermissionRequest $request)

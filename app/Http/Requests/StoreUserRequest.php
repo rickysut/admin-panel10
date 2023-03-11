@@ -21,19 +21,24 @@ class StoreUserRequest extends FormRequest
                 'string',
                 'required',
             ],
-            'username' => [
-                'string',
-                'min:3',
-                'max:20',
-                'required',
-                'unique:users',
-            ],
             'email' => [
                 'required',
                 'unique:users',
             ],
             'password' => [
                 'required',
+            ],
+            'telegram' => [
+                'string',
+            ],
+            'country' => [
+                'string',
+            ],
+            'phone' => [
+                'string',
+            ],
+            'status' => [
+                'integer',
             ],
             'roles.*' => [
                 'integer',

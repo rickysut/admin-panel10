@@ -21,16 +21,21 @@ class UpdateUserRequest extends FormRequest
                 'string',
                 'required',
             ],
-            'username' => [
-                'string',
-                'min:3',
-                'max:20',
-                'required',
-                'unique:users,username,' . request()->route('user')->id,
-            ],
             'email' => [
                 'required',
                 'unique:users,email,' . request()->route('user')->id,
+            ],
+            'telegram' => [
+                'string',
+            ],
+            'country' => [
+                'string',
+            ],
+            'phone' => [
+                'string',
+            ],
+            'status' => [
+                'integer',
             ],
             'roles.*' => [
                 'integer',

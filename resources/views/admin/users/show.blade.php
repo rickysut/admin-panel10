@@ -19,14 +19,7 @@
                             {{ $user->name }}
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.user.fields.username') }}
-                        </th>
-                        <td>
-                            {{ $user->username }}
-                        </td>
-                    </tr>
+                    
                     <tr>
                         <th>
                             {{ trans('cruds.user.fields.email') }}
@@ -41,6 +34,38 @@
                         </th>
                         <td>
                             {{ $user->email_verified_at }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.user.fields.telegram') }}
+                        </th>
+                        <td>
+                            {{ $user->telegram }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.user.fields.country') }}
+                        </th>
+                        <td>
+                            {{ $user->country }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.user.fields.phone') }}
+                        </th>
+                        <td>
+                            {{ $user->phone }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.user.fields.status') }}
+                        </th>
+                        <td>
+                            {{ $user->status }}
                         </td>
                     </tr>
                     <tr>

@@ -2,7 +2,7 @@
 
     <div class="c-sidebar-brand d-md-down-none">
         <a class="c-sidebar-brand-full h4" href="/admin">
-            <img src="{{ asset('img/logo.jpeg') }}" alt="logo" style="width:260px">
+            <img src="{{ asset('images/logo.jpeg') }}" alt="logo" style="width:260px">
                 {{-- {{ trans('panel.site_title') }} --}}
         </a>
     </div>

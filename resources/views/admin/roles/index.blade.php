@@ -25,6 +25,9 @@
                         {{ trans('cruds.role.fields.title') }}
                     </th>
                     <th>
+                      {{ trans('cruds.role.fields.default') }}
+                    </th>
+                    <th>
                         {{ trans('cruds.role.fields.permissions') }}
                     </th>
                     <th style="width:15%">
@@ -83,9 +86,10 @@
     ajax: "{{ route('admin.roles.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'title', name: 'title' },
-{ data: 'permissions', name: 'permissions.title' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+      { data: 'title', name: 'title' },
+      { data: 'default', name: 'default' },
+      { data: 'permissions', name: 'permissions.title' },
+      { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
     order: [[ 1, 'desc' ]],
@@ -98,6 +102,7 @@
   });
   
 });
+
 
 </script>
 @endsection

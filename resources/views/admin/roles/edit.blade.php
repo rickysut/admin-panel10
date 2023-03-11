@@ -13,16 +13,34 @@
             <input name="permissions[]" id="idpermissions" type="hidden" >
             <div class="row">
                 <div class="col-12">
-
-                    <div class="form-group">
-                        <label class="required" for="title">{{ trans('cruds.role.fields.title') }}</label>
-                        <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $role->title) }}" required>
-                        @if($errors->has('title'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="required" for="title">{{ trans('cruds.role.fields.title') }}</label>
+                                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $role->title) }}" required>
+                                @if($errors->has('title'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('title') }}
+                                    </div>
+                                @endif
+                                <span class="help-block">{{ trans('cruds.role.fields.title_helper') }}</span>
                             </div>
-                        @endif
-                        <span class="help-block">{{ trans('cruds.role.fields.title_helper') }}</span>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="custom-control custom-switch mt-4">
+                                    <input type="checkbox" class="custom-control-input" id="default" name="default" @if ($role->default == 1) checked @endif>
+                                    <label class="custom-control-label" for="default">{{ trans('cruds.role.fields.default') }}</label>
+                                </div>
+                            
+                                @if($errors->has('default'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('default') }}
+                                    </div>
+                                @endif
+                                <span class="help-block">{{ trans('cruds.role.fields.default_helper') }}</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <table class="table table-bordered table-striped table-hover ajaxTable datatable datatable-Role1">

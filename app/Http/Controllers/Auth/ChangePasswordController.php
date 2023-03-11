@@ -28,8 +28,14 @@ class ChangePasswordController extends Controller
     public function updateProfile(UpdateProfileRequest $request)
     {
         $user = auth()->user();
-
+        $lastemail = $user->email;
         $user->update($request->validated());
+        $newemail = $user->email;
+        if ($lastemail != $newemail){
+            $user->sendEmailVerificationNotification();
+            $user->update(['email_verified_at'=>null]);
+            return redirect()->route('verification.notice');
+        };
 
         return redirect()->route('profile.password.edit')->with('message', __('global.update_profile_success'));
     }
